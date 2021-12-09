@@ -34,7 +34,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
     data.push({x:xvalue, y:yvalue});
     //die rohdatenarrays könne lücken enthalten. Undefined bedeutet, der wert hat sich nicht geändert, dann den vorherigen wert verwenden 
   }
-  console.log(aa,data);
+
 
   var x = d3.scaleTime()
   .domain([aa.line[0].time, aa.line[aa.line.length - 1].time])         // This is the min and the max of the data: 0 to 100 if percentages

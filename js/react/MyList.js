@@ -6,22 +6,21 @@ class MyList extends React.Component {
     
     
     constructor(props) {
-      super(props);
+      super(props);     
       
-    //   const incomings = aa.tags.cI;
-    //     console.log("incoming ist :" + incomings, "from myList");
-   
-
     }
     render() {
+      const incomings = aa.tags.cI;
+      console.log("incoming ist :" + incomings, "from myList");
         return (
+          
+          <div>
           <h1>
-              HalloW
-            {/* {aa.tags.cI.map((item => {
-                <p>item</p>
-            }))} */}
+              Hallo
+            {incomings.forEach(i => {
+              <div></div>            })}
           </h1>
-         
+         </div>
         );
       }
   }
