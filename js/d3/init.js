@@ -75,6 +75,12 @@ $( document ).ready(function() { //beim ersten Webseite laden
     document.getElementById('myDummyID')
   );
 
+  ReactDOM.render(
+    <MyList/>,
+    document.getElementById('myListID')
+  );
+
+
 
 
 });

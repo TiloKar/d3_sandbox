@@ -11,7 +11,7 @@ class MyDummy extends React.Component {
   render() {
       return (
         <h1>
-          Nur ne Überschrift
+          D3- Graph
         </h1>
       );
     }

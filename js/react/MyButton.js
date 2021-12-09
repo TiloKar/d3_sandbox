@@ -10,7 +10,7 @@ class MyButton extends React.Component {
   }
   render() {
       return (
-        <button onClick={this.props.onClickBinding}>
+        <button style = {{background: "red"}} onClick={this.props.onClickBinding}>
           {this.props.text}
         </button>
       );
