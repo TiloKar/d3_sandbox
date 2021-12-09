@@ -30,7 +30,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
     data.push({x:aa.line[i].time, y:aa.line[i].data.cI[6]});
   }
 
-  var x = d3.scaleLinear()
+  var x = d3.scaleTime()
   .domain([aa.line[0].time, aa.line[aa.line.length - 1].time])         // This is the min and the max of the data: 0 to 100 if percentages
   .range([0, width]);       // This is the corresponding value I want in Pixel
   
@@ -55,7 +55,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
   .append("circle")
     .attr("cx", function(d){ return x(d.x) })
     .attr("cy", function(d){ return y(d.y) })
-    .attr("r", 7);
+    .attr("r", 2);
 
 });
 
