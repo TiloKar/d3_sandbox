@@ -63,13 +63,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
     .attr("cy", function(d){ return y(d.y) })
     .attr("r", 2);
 
-  ReactDOM.render(
-    <MyButton   text="Mein statischer Button Text"
-                onClickBinding = {() => {alert('click aus react');}}
-    />,
-    document.getElementById('myButtonID')
-  );
-
+ 
   ReactDOM.render(
     <MyDummy/>,
     document.getElementById('myDummyID')
