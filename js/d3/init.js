@@ -26,9 +26,15 @@ $( document ).ready(function() { //beim ersten Webseite laden
   //alert(aa.line[0].time);
 
   var data = [];   //datenreihe 6 der eingänge (temp)
-  for (var i=0; i<aa.line.length - 1; i++){
-    data.push({x:aa.line[i].time, y:aa.line[i].data.cI[6]});
+  var xvalue,yvalue;
+  for (var i=0; i < aa.line.length; i++){
+    xvalue = aa.line[i].time;
+    yvalue = aa.line[i].data.cI[6];
+    if (yvalue=== undefined) yvalue = data[i-1].y;
+    data.push({x:xvalue, y:yvalue});
+    //die rohdatenarrays könne lücken enthalten. Undefined bedeutet, der wert hat sich nicht geändert, dann den vorherigen wert verwenden 
   }
+  console.log(aa,data);
 
   var x = d3.scaleTime()
   .domain([aa.line[0].time, aa.line[aa.line.length - 1].time])         // This is the min and the max of the data: 0 to 100 if percentages
@@ -56,6 +62,20 @@ $( document ).ready(function() { //beim ersten Webseite laden
     .attr("cx", function(d){ return x(d.x) })
     .attr("cy", function(d){ return y(d.y) })
     .attr("r", 2);
+
+  ReactDOM.render(
+    <MyButton   text="Mein statischer Button Text"
+                onClickBinding = {() => {alert('click aus react');}}
+    />,
+    document.getElementById('myButtonID')
+  );
+
+  ReactDOM.render(
+    <MyDummy/>,
+    document.getElementById('myDummyID')
+  );
+
+
 
 });
 
