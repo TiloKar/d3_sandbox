@@ -20,9 +20,11 @@ class MyButton extends React.Component {
   render() {
 
       return (
-        <button style={{ background: "red" , margin: "10px" }} onClick={this.clickMessage}>
+        <div >
+        <button style={{ background: "red" , margin: "10px", width: "200px", height: "30px" }} onClick={this.clickMessage}>
           {aa.tags.cI[this.props.index]} 
         </button>
+        </div>
 
       );
     }

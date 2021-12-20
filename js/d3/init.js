@@ -66,6 +66,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
   .selectAll("whatever")
   .data(data)
   .enter()
+  .append("g")
   .append("circle")
     .attr("cx", function(d){ return x(d.x) })
     .attr("cy", function(d){ return y(d.y) })
