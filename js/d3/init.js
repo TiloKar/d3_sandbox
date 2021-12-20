@@ -26,7 +26,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
-  console.log("d3", d3);
+  console.log("d3", d3.select("#drawArea"));
   console.log("sVG", sVg);
   
   // X scale and Axis
@@ -69,7 +69,28 @@ $( document ).ready(function() { //beim ersten Webseite laden
   .append("circle")
     .attr("cx", function(d){ return x(d.x) })
     .attr("cy", function(d){ return y(d.y) })
-    .attr("r", 2);
+    .attr("r", 2)
+  .style("fill", "rgb(12, 240, 233)")
+
+    var data2 = [];   //datenreihe 6 der eingänge (temp)
+    var xvalue2,yvalue2;
+    for (var i=0; i < aa.line.length; i++){
+      xvalue2 = aa.line[i].time;
+      yvalue2 = aa.line[i].data.cI[5];
+      if (yvalue2=== undefined) yvalue2 = data2[i-1].y;
+      data2.push({x:xvalue2, y:yvalue2});
+      //die rohdatenarrays könne lücken enthalten. Undefined bedeutet, der wert hat sich nicht geändert, dann den vorherigen wert verwenden 
+    }
+  
+    sVg
+    .selectAll("whatever")
+    .data(data2)
+    .enter()
+    .append("circle")
+      .attr("cx", function(d2){ return x(d2.x) })
+      .attr("cy", function(d2){ return y(d2.y) })
+      .attr("r", 2)
+    .style("fill", "rgb(255, 128, 0)")
 
  
   ReactDOM.render(
