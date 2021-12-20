@@ -6,7 +6,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
 
   aa=window.opener.trendfile1;// schon verfügbar, und muss nicht neu geparst werden...
   
- 
+  console.log(aa);
   // set the dimensions and margins of the graph
   var margin = {top: 10, right: 40, bottom: 30, left: 30},
   width = 450 - margin.left - margin.right,

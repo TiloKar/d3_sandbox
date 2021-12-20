@@ -18,7 +18,7 @@ class MyList extends React.Component {
           <h1>
               Hallo
             {incomings.forEach(i => {
-              <div></div>            })}
+              <div>i</div>            })}
           </h1>
          </div>
         );
