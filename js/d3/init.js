@@ -1,5 +1,9 @@
 var aa ={}; //query für js entsprechung der dumpdaten
 
+var Alert = ReactBootstrap.Alert; //Pseudo Import für react bootstrap alert klasse
+var Accordion = ReactBootstrap.Accordion; //Pseudo Import für react bootstrap Accodion klasse
+var Button = ReactBootstrap.Button; //Pseudo Import für react bootstrap Accodion klasse
+
 $( document ).ready(function() { //beim ersten Webseite laden
 
   document.title = "bbi-D3-Plotter #" + window.opener.idAT_1;
@@ -7,6 +11,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
   aa=window.opener.trendfile1;// schon verfügbar, und muss nicht neu geparst werden...
   
   console.log(aa);
+
   // set the dimensions and margins of the graph
   var margin = {top: 10, right: 40, bottom: 30, left: 30},
   width = 450 - margin.left - margin.right,
@@ -63,13 +68,7 @@ $( document ).ready(function() { //beim ersten Webseite laden
     .attr("cy", function(d){ return y(d.y) })
     .attr("r", 2);
 
-  ReactDOM.render(
-    <MyButton   text="Mein statischer Button Text"
-                onClickBinding = {() => {alert('click aus react');}}
-    />,
-    document.getElementById('myButtonID')
-  );
-
+ 
   ReactDOM.render(
     <MyDummy/>,
     document.getElementById('myDummyID')
@@ -80,8 +79,9 @@ $( document ).ready(function() { //beim ersten Webseite laden
     document.getElementById('myListID')
   );
 
-
-
-
+  ReactDOM.render(
+    <Button variant="secondary">Secondary</Button>,
+    document.getElementById('myReactBootstrap')
+  );
 });
 
