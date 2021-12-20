@@ -11,12 +11,12 @@ $( document ).ready(function() { //beim ersten Webseite laden
   aa=window.opener.trendfile1;// schon verfügbar, und muss nicht neu geparst werden...
   
   console.log(aa);
-
+  
   // set the dimensions and margins of the graph
   var margin = {top: 10, right: 40, bottom: 30, left: 30},
   width = 450 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom;
-
+  
   // append the svg object to the body of the page
   var sVg = d3.select("#drawArea")
   .append("svg")
@@ -25,7 +25,10 @@ $( document ).ready(function() { //beim ersten Webseite laden
   // translate this svg element to leave some margin.
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+  
+  console.log("d3", d3);
+  console.log("sVG", sVg);
+  
   // X scale and Axis
   //var xlen=aa.line.length;
   //alert(aa.line[0].time);
